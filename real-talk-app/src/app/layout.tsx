@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Real Talk",
     images: [
       {
-        url: "https://realtalkz.netlify.app/public/preview.webp", // full URL to your preview image
+        url: "https://realtalkz.netlify.app/preview.webp", // full URL to your preview image
         width: 1200,
         height: 630,
         alt: "Real Talk App Preview",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Real Talk – Spark Meaningful Conversations",
     description:
       "Explore thoughtful, customized discussion topics powered by AI and tailored to your relationships.",
-    images: ["https://realtalkz.netlify.app/public/preview.webp"],
+    images: ["https://realtalkz.netlify.app/preview.webp"],
   },
 };
 
