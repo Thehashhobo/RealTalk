@@ -53,7 +53,7 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
     </Head>
     <div className="inset-0 -z-10 [background:radial-gradient(135%_135%_at_50%_20%,#000_40%,#241a63_70%)]">
-      <main className="flex flex-col justify-self-center items-center justify-center max-w-9/10 min-h-screen py-2 gap-3">
+      <main className="flex flex-col justify-self-center items-center justify-center ml-2.5 mr-2.5 min-h-screen py-2 gap-3">
         {/* Hero Text */}
         <h1 className={"text-3xl font-bold text-center lg:text-5xl mb-4 " + (play ? "animate-slide-h1" : "")}>
           Profound, <span className="font-serif">Personalized</span> Conversations <span className="font-mono">Tailored</span> To <span className="underline">You</span>
