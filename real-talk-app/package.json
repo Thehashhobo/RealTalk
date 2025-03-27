@@ -15,8 +15,7 @@
     "openai": "^4.89.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-switch": "^7.1.0",
-    "zod": "^3.24.2"
+    "react-switch": "^7.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
