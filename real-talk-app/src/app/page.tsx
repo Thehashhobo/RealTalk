@@ -1,8 +1,7 @@
 "use client";
-import { useState, FormEvent, startTransition } from "react";
+import { useState, FormEvent } from "react";
 import Head from "next/head";
 import Switch from "react-switch";
-import Typet from "next/font/google";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -36,6 +35,7 @@ export default function Home() {
         setTopics(data.topics);
       }
     } catch (err) {
+      console.error(err);
       setError("Error fetching topics");
     } finally {
       setLoading(false);
