@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     userContent += ` between ${relationship}. Return your answer as a valid JSON array of strings, for example: ["Topic 1", ... ].`;
 
     // console.log("User content:", userContent);
-    const messages = [
+    const messages: Array<{ role: "system" | "user" | "assistant"; content: string }> = [
       {
       role: "system",
       content:
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     // console.log("Calling OpenAI API with messages:", messages);
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini-2024-07-18", // or "gpt-4"
-      messages: messages as any,
+      messages: messages,
       max_tokens: 250,
       temperature: 0.7,
     });
