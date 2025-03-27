@@ -164,7 +164,7 @@ export default function Home() {
               {topics.map((topic, idx) => (
                 <li
                   key={idx}
-                  className="flex items-center justify-between p-4 border rounded transition-transform transition-shadow hover:shadow-md hover:-translate-y-1"
+                  className="flex items-center justify-between p-4 border rounded transition-shadow hover:shadow-md hover:-translate-y-1"
                 >
                   <span>{topic}</span>
                   {/* <button
