@@ -7,23 +7,36 @@ const openai = new OpenAI({
 export async function POST(req: Request) {
   // parse body, etc.
   try {
-    const { topic, controversial, relationship } = await req.json();
+    const { type, topic, personal, relationship, keyword } = await req.json();
 
     // Construct a message array for a chat completion
+    let userContent = `Generate exactly 5 `
+    if  (personal === false)  {
+         
+         userContent += `deep`
+    }    
+    userContent += `${type} conversation topics about ${topic}`;
+
+    if (keyword && keyword.trim() !== "") {
+      userContent += ` related to keyword ${keyword}`;
+    }
+    userContent += ` between ${relationship}. Return your answer as a valid JSON array of strings, for example: ["Topic 1", ... ].`;
+
+    // console.log("User content:", userContent);
     const messages = [
       {
-        role: "system",
-        content:
-          "You are a helpful assistant that generates exactly 5 conversation topics in JSON array form, with no extra text.",
+      role: "system",
+      content:
+        "You are a helpful assistant that generates exactly 5 conversation topics in JSON array form, with no extra text.",
       },
       {
-        role: "user",
-        content: `Generate exactly 5 deep conversation topics about ${topic} with a controversial level of ${controversial} between ${relationship}. Return your answer as a valid JSON array of strings, for example: ["Topic 1", ... ].`,
+      role: "user",
+      content: userContent,
       },
     ];
 
     // Call chat.completions.create with the new library
-    console.log("Calling OpenAI API with messages:", messages);
+    // console.log("Calling OpenAI API with messages:", messages);
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini-2024-07-18", // or "gpt-4"
       messages: messages as any,
