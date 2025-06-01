@@ -4,7 +4,7 @@
 
 ## 🌐 Live Site
 
-[https://realtalkz.netlify.app/](https://realtalk.yourdomain.com)
+[https://realtalkz.netlify.app/](https://realtalkz.netlify.app/)
 
 ## 🚀 Features
 
